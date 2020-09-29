@@ -146,8 +146,12 @@ app.post('/data', function (req, res) {
 
 })
 
-app.listen(8888);
-console.log('Express server started on port 8888');
+const port = 8888 || process.env.PORT;
+
+app.listen(port,()=>{
+  console.log(`Express server started on port ${port}`);
+});
+
 
 //------------------------- Functions
 function server(res) {
