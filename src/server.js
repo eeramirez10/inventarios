@@ -98,6 +98,13 @@ app.configure(function () {
   app.use(app.router);
 });
 
+const port = process.env.PORT || 8888;
+
+app.listen(port,()=>{
+  console.log(`Express server started on port ${port}`);
+});
+
+
 //---Global vars
 var request = {};
 var aColumns = ['FINV.ISEQ', 'ICOD', 'IEAN', 'I2DESCR', ' DATE_FORMAT(IALTA,"%Y-%m-%d")', 'ALMCANT', 'ALMNUM'];
@@ -146,11 +153,6 @@ app.post('/data', function (req, res) {
 
 })
 
-const port = process.env.PORT || 8888;
-
-app.listen(port,()=>{
-  console.log(`Express server started on port ${port}`);
-});
 
 
 //------------------------- Functions
